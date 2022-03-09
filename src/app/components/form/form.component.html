@@ -1,0 +1,75 @@
+<p>form works!</p>
+<p-panel header="User Details">
+
+<div >
+<form [formGroup]="userFormGroup">
+    <div class="p-field">
+       <div> <label for="username2">ID  </label></div>
+        <input id="username2" type="username" formControlName="id" aria-describedby="username2-help"  pInputText />
+        <br>
+        <small *ngIf="userFormGroup.controls.id.errors?.required && userFormGroup.controls.id.dirty" id="username2-help" class="p-error">ID is a required field</small>
+    </div>
+    <form formGroupName="name">
+    <div class="p-field">
+        <div> <label for="username2">First name  </label></div>
+         <input id="username2" type="username" formControlName="firstName" aria-describedby="username2-help"  pInputText />
+         <br>
+         <small *ngIf="formName.controls.firstName.errors?.required && formName.controls.firstName.dirty" id="username2-help" class="p-error">first name is a required field</small>
+        </div>
+     <div class="p-field">
+        <div> <label for="username2">Last Name  </label></div>
+         <input id="username2" type="username" formControlName="lastName" aria-describedby="username2-help"  pInputText />
+         <br>
+         <small *ngIf="formName.controls.lastName.errors?.required && formName.controls.lastName.dirty" id="username2-help" class="p-error">last name is a required field</small>
+     </div>
+
+</form>
+<div class="p-field">
+    <div> <label for="username2">Email </label></div>
+     <input id="username2" type="username" formControlName="email" aria-describedby="username2-help"  pInputText />
+     <br>
+     <small *ngIf="userFormGroup.controls.email.errors?.required && userFormGroup.controls.email.dirty" id="username2-help" class="p-error">email is a required field</small>
+     <small *ngIf="userFormGroup.controls.email.errors?.email && userFormGroup.controls.email.dirty" id="username2-help" class="p-error">Invalid email
+    </small>
+    </div>
+ <div class="p-field">
+    <div> <label for="username2">Phone  </label></div>
+     <input id="username2" type="username" formControlName="phone" aria-describedby="username2-help"  pInputText />
+     <br>
+     <small *ngIf="userFormGroup.controls.phone.errors?.pattern && userFormGroup.controls.phone.dirty" id="username2-help" class="p-error">Invalid phone</small>
+ </div>
+ <div class="p-field">
+    <div> <label for="username2">Address  </label></div>
+     <input id="username2" type="username" formControlName="address" aria-describedby="username2-help"  pInputText />
+     <br>
+ </div>
+
+
+<form formGroupName="password">
+    
+    <div class="p-field">
+        <div> <label for="username2">Password  </label></div>
+         <input id="username2" type="username" formControlName="pwd" aria-describedby="username2-help"  pInputText />
+         <br>
+         <small *ngIf="formPassword.controls.pwd.errors?.PasswordNotValid && formPassword.controls.pwd.dirty" id="username2-help" class="p-error">invalid password</small>
+     </div>
+     <div class="p-field">
+        <div> <label for="username2">Confirm password  </label></div>
+         <input id="username2" type="username" formControlName="confirmPwd" aria-describedby="username2-help"  pInputText />
+         <br>
+         <small *ngIf="formPassword.controls.confirmPwd.errors?.ConfirmPasswordError && formPassword.controls.confirmPwd.dirty" id="username2-help" class="p-error">Password and confirm password are not the same
+        </small>
+        </div>
+  
+</form>
+<div class="p-field">
+    <div> <label for="username2">Gender  </label></div>
+     <input id="username2" type="username" formControlName="gender" aria-describedby="username2-help"  pInputText />
+     <br>
+ </div>
+
+</form>
+<p-button (click)="submit()" label="Submit"></p-button>
+
+</div>
+</p-panel>
